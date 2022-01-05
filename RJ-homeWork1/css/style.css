@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    width: 90%;
+    margin: 0 auto;
+
+}
+.screenBox{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px; 
+}
+.screen{
+    padding: 10px 15px 10px 15px ;
+    display: flex;
+    justify-content: center; 
+    background-color:#5f5e5d ;  
+}
+.screen-text{
+    width: 98%;
+    background-color: snow;
+    height: 150px;
+    border-radius: 23px;
+}
+.screenBtns{
+    padding: 10px 15px 10px 15px ;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color:#5f5e5d ;
+}
+.writePlase{
+    margin: 0 auto;
+    width: 72%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    background-color:#5f5e5d;
+    padding: 20px 0;  
+    margin-bottom: 30px;
+}
+.writePlase-text{
+    width: 90%;
+    height: 35px;
+}
+
+button{
+    margin: 0 15px;
+    padding: 15px;
+}
+.line{
+    text-decoration-line: line-through;
+}
+.red{
+    background-color: #db0909;
+}
+.green{
+    background-color: #dbd809;
+}
