@@ -1,0 +1,24 @@
+header{
+    background-color: #d4f7f4;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .select--list{
+            a{
+                margin-right: 78px;
+                text-decoration: none;
+                font-size: 2rem;
+                font-family: 'Neonderthaw', cursive;
+            }
+            a:hover{
+                color: #27ca58;
+                font-size: 3rem;
+            }
+        }
+        img{
+            width: 188px;
+        }
+    }
+}
