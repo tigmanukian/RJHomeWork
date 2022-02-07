@@ -50,6 +50,30 @@ btn.addEventListener('click', () =>{
  
 });
 
+btn.addEventListener("click", setTim);
+
+function setTim(){
+    let d;
+    
+    setTimeout(() => {
+        let  prom = prompt('',' barev');
+        if(d === undefined){
+            
+            prom;
+            
+        }
+        console.log(prom)
+        if(prom === null){
+            prompt('',' barev')
+        }else{
+            console.log("all the okay ");
+        }
+       
+    }, 1000);
+    
+  
+}
+
 
 
 console.log(dataArr);
