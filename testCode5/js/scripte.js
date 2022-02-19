@@ -295,7 +295,7 @@
 
 // console.log(one.log());
 
-/////////////////////////////////////////////////////////  tasc 1
+///////////////////////////////////////////////////////// exersise 1 
 
 
 // class Rectangle {
@@ -364,7 +364,7 @@
 //////////////////////////////////////////// 
 
 
-<<<<<<< HEAD
+
 // function promiseFunction(){
 //     return new Promise((res, rej) => {
 //         setTimeout(() => res([1,2,3,4],200))
@@ -380,7 +380,7 @@
 // };
 // some();
 
-/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////   exercise 2
 
 
 // class Employee {
@@ -426,6 +426,50 @@
 // console.log(data.getAnnularSalary());
 // console.log(data.raiseSalary(20));
 
+////////////////////////////////////////////////////////////////   exercise 3
 
+class Auther {
+    constructor(name, email, gender) {
+        this.name = name;
+        this.email = email;
+        this.gender = gender;
+    };
+    get() {
+        return `All data ${this.name}  ${this.email} ${this.gender} `
+    }
+    set(value) {
+        if (value.split(' ').length === 1) {
+            return value
+        } else {
+            console.log(" you didn't enter proper value")
+        }
+    }
+    toStringData() {
+        return `all information how string ${this.name.toString()} - ${this.email.toString()} - ${this.gender.toString()} `
+    }
+};
+const auther1 = new Auther("Tigran", "tig.manukian@gmail.com", "gender")
+console.log(auther1.set("tigran"));
+console.log(auther1.toStringData());
 
-
+class Book extends Auther {
+    constructor(title, price, quantity) {
+        this.title = title;
+        this.price = price;
+        this.quantity = quantity
+        this.obj = [];
+    }
+    get() {
+        return `all ${this.title} ${this.email} ${this.gender}`
+    }
+    set(value) {
+        this.obj.push(value)
+    }
+    getProfit() {
+        const calculates = this.quantity * this.price;
+        return calculates;
+    }
+    toStringData() {
+        return `all information how string ${this.title.toString()} - ${this.email.toString()} - ${this.gender.toString()} `
+    }
+}
