@@ -244,24 +244,137 @@
 
 ////////////////////////////////////////////////////////////
 
-class Human{
+// class Human{
     
-    constructor(name, surname){
-        this.name = name;
-        this.surname = surname;
-    }
-    get fullName(){
-        return `${this.name} ${this.surname}`;
-    }
+//     constructor(name, surname){
+//         this.name = name;
+//         this.surname = surname;
+//     }
+//     get fullName(){
+//         return `${this.name} ${this.surname}`;
+//     }
 
-    log(){
-        console.log(this.name);
-    };
+//     log = () => {
+//         console.log(this.name);
+//     };
+// };
+
+// const human1 = new Human('Eve', "sherLock");
+
+// setTimeout(human1.log,200);
+
+// console.log(human1);
+
+
+
+//////////////////////////////////////////////////////////
+
+// class Animal {
+//     // count = 0;
+//     constructor(name){
+//         this.name = name;
+//     }
+//     log(){
+//         console.log(this.name);
+//     }
+// }
+// class Mammal extends Animal {
+//     constructor(name,age){
+//         super(name);
+//         this.age = age;
+//     };
+//     count = 0;
+//     log(){
+//         console.log(this.age);
+//     }
+// };
+ 
+// const one = new Mammal("human", "1000");
+
+// console.log(one);
+
+// console.log(one.log());
+
+/////////////////////////////////////////////////////////  tasc 1
+
+
+// class Rectangle {
+//     constructor(length, width){
+//         this.length = length;
+//         this.width = width;
+//     };
+   
+//     get(){
+//         return ` all your parametr ${this.length} ${this.width}`;
+//     };
+//     set(){
+//         if(this.length >= this.width){
+//            return ` your parametr right ${this.length, this.width}`
+//         }else{
+//             return`length must be high ${this.length} `
+//         }
+//     };
+//     toString(){
+//         return `parameters: ${this.length} ${this.width}`
+//     };
+//     getPeremeter(){
+//         return `you can use this parameter ${this.length + 200 } ${this.width + 100}}`
+//     }
+// }
+
+// const one = new Rectangle(50,100);
+
+
+// console.log(one.toString());
+// console.log(one.set());
+// console.log(one.getPeremeter());
+
+///////////////////////////////////////////////////////        Promise  then
+
+// const prom = new Promise ((resolve, reject) => {
+//     let result = ["karen", "tiko","artak"];
+
+//     setTimeout(() => {resolve(result)},100);
+   
+// });
+
+// prom.then((argumnt) => {
+//     // return argumnt;
+//     console.log(argumnt);
+// });
+
+
+////////////////////////////////////////////////////////   Promise  then
+
+// const prom = new Promise ((resolve, reject) => {
+//     let result = ["karen", "tiko","artak"];
+
+//     setTimeout(() => {reject(result)},100);
+   
+// });
+
+// prom.then((argumnt) => {
+    
+//     console.log(argumnt , "resolve");
+// }, (err) => {
+//     console.log(err,"reject");
+// }
+// );
+
+//////////////////////////////////////////// 
+
+
+function promiseFunction(){
+    return new Promise((res, rej) => {
+        setTimeout(() => res([1,2,3,4],200))
+    })
+}
+// let prom1 = promiseFunction();
+
+// console.log(prom1);
+ 
+async function some(){
+    let res = await promiseFunction();
+    console.log(res); 
 };
-
-const human1 = new Human('Eve', "sherLock");
-const human2 = new Human("kate");
-
-console.log(human1);
-console.log(human2);
-
+some();
