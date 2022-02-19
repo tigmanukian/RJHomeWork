@@ -378,3 +378,5 @@ async function some(){
     console.log(res); 
 };
 some();
+
+console.log()
