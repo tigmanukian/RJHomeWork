@@ -159,7 +159,7 @@
 //  const user1 = new User('Adam');
 
 // console.log(user1);
- 
+
 /////////////////////////////////////////////////      __porto__ prototype chain 
 // let person ={
 //     head: "true1", 
@@ -227,25 +227,25 @@
 /////////////////////////////////////////////////////
 
 // var myObject = {
-    //     foo: "bar",
-    //     func: function(){
-    //         var self = this;
-    
-    
-    //         console.log("fun 1 = " + this.foo);
-    //         console.log("fun 1 = " + self.foo);
-    //         (function(){
-    //             console.log("fun 1 = " + this.foo);
-    //             console.log("fun 1 = " + self.foo);
-    //         }());
-    //     }
-    // }
-    // myObject.func();
+//     foo: "bar",
+//     func: function(){
+//         var self = this;
+
+
+//         console.log("fun 1 = " + this.foo);
+//         console.log("fun 1 = " + self.foo);
+//         (function(){
+//             console.log("fun 1 = " + this.foo);
+//             console.log("fun 1 = " + self.foo);
+//         }());
+//     }
+// }
+// myObject.func();
 
 ////////////////////////////////////////////////////////////
 
 // class Human{
-    
+
 //     constructor(name, surname){
 //         this.name = name;
 //         this.surname = surname;
@@ -288,7 +288,7 @@
 //         console.log(this.age);
 //     }
 // };
- 
+
 // const one = new Mammal("human", "1000");
 
 // console.log(one);
@@ -303,13 +303,13 @@
 //         this.length = length;
 //         this.width = width;
 //     };
-   
+
 //     get(){
 //         return ` all your parametr ${this.length} ${this.width}`;
 //     };
 //     set(){
 //         if(this.length >= this.width){
-//            return ` your parametr right ${this.length, this.width}`
+//            return ` your parametr hrigt ${this.length, this.width}`
 //         }else{
 //             return`length must be high ${this.length} `
 //         }
@@ -335,7 +335,7 @@
 //     let result = ["karen", "tiko","artak"];
 
 //     setTimeout(() => {resolve(result)},100);
-   
+
 // });
 
 // prom.then((argumnt) => {
@@ -350,11 +350,11 @@
 //     let result = ["karen", "tiko","artak"];
 
 //     setTimeout(() => {reject(result)},100);
-   
+
 // });
 
 // prom.then((argumnt) => {
-    
+
 //     console.log(argumnt , "resolve");
 // }, (err) => {
 //     console.log(err,"reject");
@@ -364,17 +364,63 @@
 //////////////////////////////////////////// 
 
 
-function promiseFunction(){
-    return new Promise((res, rej) => {
-        setTimeout(() => res([1,2,3,4],200))
-    })
-}
-// let prom1 = promiseFunction();
+// function promiseFunction(){
+//     return new Promise((res, rej) => {
+//         setTimeout(() => res([1,2,3,4],200))
+//     })
+// }
+// // let prom1 = promiseFunction();
 
-// console.log(prom1);
- 
-async function some(){
-    let res = await promiseFunction();
-    console.log(res); 
-};
-some();
+// // console.log(prom1);
+
+// async function some(){
+//     let res = await promiseFunction();
+//     console.log(res); 
+// };
+// some();
+
+/////////////////////////////////////////////////////////
+
+
+// class Employee {
+//     constructor(id, firstName, lastName, positions, salary, workingHours) {
+//         this.id = id;
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.positions = positions;
+//         this.salary = salary;
+//         this.workingHours = workingHours;
+//         this.dataClass = [];
+//     }
+//     get() {
+//         return ` Id- ${this.id} firstName- ${this.firstName}  lastName- ${this.lastName}
+//                  positions- ${this.positions}  salary-${this.salary} workingHours- ${this.workingHours}  `
+//     }
+
+//     set() {
+//         if (this.id <= 20) {
+//             return this.id;
+//         } else {
+//             return ` plise write your rigt id  `
+//         }
+//     }
+//     getFullName() {
+//         return ` FullName ${this.firstName[0].toUpperCase() + this.firstName.slice(1)} ${this.lastName[0].toUpperCase() + this.lastName.slice(1)}`
+//     }
+//     getAnnularSalary(){
+//         return ` all salary within year ${this.salary * 12}`
+//     }
+//     raiseSalary(percent){
+//         const raiseSalaryMuth = this.salary * percent / 100;
+//         return raiseSalaryMuth
+//     }
+// }
+
+// const data = new Employee(14, "tigran", "manukyan","junior", 100000, );
+
+
+// console.log(data.set());
+// console.log(data);
+// console.log(data.getFullName());
+// console.log(data.getAnnularSalary());
+// console.log(data.raiseSalary(20));
