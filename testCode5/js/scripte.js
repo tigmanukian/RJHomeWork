@@ -364,6 +364,7 @@
 //////////////////////////////////////////// 
 
 
+<<<<<<< HEAD
 // function promiseFunction(){
 //     return new Promise((res, rej) => {
 //         setTimeout(() => res([1,2,3,4],200))
@@ -424,3 +425,7 @@
 // console.log(data.getFullName());
 // console.log(data.getAnnularSalary());
 // console.log(data.raiseSalary(20));
+
+
+
+
