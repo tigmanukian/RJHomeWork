@@ -428,48 +428,95 @@
 
 ////////////////////////////////////////////////////////////////   exercise 3
 
-class Auther {
-    constructor(name, email, gender) {
+// class Auther {
+//     constructor(name, email, gender) {
+//         this.name = name;
+//         this.email = email;
+//         this.gender = gender;
+//     };
+//     get() {
+//         return `All data ${this.name}  ${this.email} ${this.gender} `
+//     }
+//     set(value) {
+//         if (value.split(' ').length === 1) {
+//             return value
+//         } else {
+//             console.log(" you didn't enter proper value")
+//         }
+//     }
+//     toStringData() {
+//         return `all information how string ${this.name.toString()} - ${this.email.toString()} - ${this.gender.toString()} `
+//     }
+// };
+// const auther1 = new Auther("Tigran", "tig.manukian@gmail.com", "gender")
+
+// class Book extends Auther {
+//     constructor(title, price, quantity) {
+//         this.title = title;
+//         this.price = price;
+//         this.quantity = quantity
+            // Obj = [];
+//     }
+//     get() {
+//         return `all ${this.title} ${this.email} ${this.gender}`
+//     }
+//     set(value) {
+//         this.obj.push(value)
+//     }
+//     getProfit() {
+//         const calculates = this.quantity * this.price;
+//         return calculates;
+//     }
+//     toStringData() {
+//         return `all information how string ${this.title.toString()} - ${this.email.toString()} - ${this.gender.toString()} `
+//     }
+// }
+
+/////////////////////////////////////////////////////////////////
+
+class Account {
+    constructor(id, name, balance){
+        this.id = id;
         this.name = name;
-        this.email = email;
-        this.gender = gender;
-    };
-    get() {
-        return `All data ${this.name}  ${this.email} ${this.gender} `
+        this.balance = balance;
     }
-    set(value) {
-        if (value.split(' ').length === 1) {
-            return value
-        } else {
-            console.log(" you didn't enter proper value")
+    get(){
+        return `all result ${this.id} ${this.name} ${this.balance}`;
+    }
+    set name(value){
+        if(value === value[0].toUpperCase() + value.slice(1)){
+            return value;
+        }else{
+            return `please write capital Letter your name`;
         }
     }
-    toStringData() {
-        return `all information how string ${this.name.toString()} - ${this.email.toString()} - ${this.gender.toString()} `
+    credit(amount){
+        const realBalans = this.balance + amount;
+        return realBalans;
     }
-};
-const auther1 = new Auther("Tigran", "tig.manukian@gmail.com", "gender")
-console.log(auther1.set("tigran"));
-console.log(auther1.toStringData());
+    debit(amount){
+        if(this.balance - amount < 0){
+            return `Amount exceeded balance.`;
+        }else{
+            return amount;
+        }
+    }
+    transferto( amount, anotherAccount){
+        if(this.balance - amount < 0){
+            return  `Amount exceeded balance`;
+            // console.log(`Amount exceeded balance`)
+        }else{ 
+            anotherAccount + amount;
+            let realBalans = this.balance - amount;
+            return  `your balans ${realBalans}` ;
+        }
+        
+    }
+    identifyAccounts(accountFirst, accountSecond){
 
-class Book extends Auther {
-    constructor(title, price, quantity) {
-        this.title = title;
-        this.price = price;
-        this.quantity = quantity
-        this.obj = [];
-    }
-    get() {
-        return `all ${this.title} ${this.email} ${this.gender}`
-    }
-    set(value) {
-        this.obj.push(value)
-    }
-    getProfit() {
-        const calculates = this.quantity * this.price;
-        return calculates;
-    }
-    toStringData() {
-        return `all information how string ${this.title.toString()} - ${this.email.toString()} - ${this.gender.toString()} `
     }
 }
+
+const  count  =  new Account(5467, "tigran", 2500);
+
+console.log(count.transferto(2400));
