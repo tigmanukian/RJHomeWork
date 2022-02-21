@@ -455,7 +455,7 @@
 //         this.title = title;
 //         this.price = price;
 //         this.quantity = quantity
-            // Obj = [];
+// Obj = [];
 //     }
 //     get() {
 //         return `all ${this.title} ${this.email} ${this.gender}`
@@ -474,49 +474,150 @@
 
 /////////////////////////////////////////////////////////////////
 
-class Account {
-    constructor(id, name, balance){
-        this.id = id;
-        this.name = name;
-        this.balance = balance;
-    }
-    get(){
-        return `all result ${this.id} ${this.name} ${this.balance}`;
-    }
-    set name(value){
-        if(value === value[0].toUpperCase() + value.slice(1)){
-            return value;
-        }else{
-            return `please write capital Letter your name`;
-        }
-    }
-    credit(amount){
-        const realBalans = this.balance + amount;
-        return realBalans;
-    }
-    debit(amount){
-        if(this.balance - amount < 0){
-            return `Amount exceeded balance.`;
-        }else{
-            return amount;
-        }
-    }
-    transferto( amount, anotherAccount){
-        if(this.balance - amount < 0){
-            return  `Amount exceeded balance`;
-            // console.log(`Amount exceeded balance`)
-        }else{ 
-            anotherAccount + amount;
-            let realBalans = this.balance - amount;
-            return  `your balans ${realBalans}` ;
-        }
-        
-    }
-    identifyAccounts(accountFirst, accountSecond){
+// class Account {
+//     constructor(id, name, balance){
+//         this.id = id;
+//         this.name = name;
+//         this.balance = balance;
+//     }
+//     get(){
+//         return `all result ${this.id} ${this.name} ${this.balance}`;
+//     }
+//     set name(value){
+//         if(value === value[0].toUpperCase() + value.slice(1)){
+//             return value;
+//         }else{
+//             return `please write capital Letter your name`;
+//         }
+//     }
+//     credit(amount){
+//         const realBalans = this.balance + amount;
+//         return realBalans;
+//     }
+//     debit(amount){
+//         if(this.balance - amount < 0){
+//             return `Amount exceeded balance.`;
+//         }else{
+//             return amount;
+//         }
+//     }
+//     transferto( amount, anotherAccount){
+//         if(this.balance - amount < 0){
+//             return  `Amount exceeded balance`;
+//             // console.log(`Amount exceeded balance`)
+//         }else{ 
+//             anotherAccount + amount;
+//             let realBalans = this.balance - amount;
+//             return  `your balans ${realBalans}` ;
+//         }
 
+//     }
+//     identifyAccounts(accountFirst, accountSecond){
+//         for (let i = 0; i <= accountFirst.length; i++){
+//             if(accountFirst[i].toString() === accountSecond[i].toString()){
+//                 return `to data are same please change your credit card`;
+//             }else{
+//                 return `it's two card are difrent `
+//             }
+
+//         }
+//     }
+// }
+
+// const  count  =  new Account(5467, "tigran", 2500);
+
+// // console.log(count.transferto(2400));
+// console.log(count.identifyAccounts([31,"tigran", 566],[30,"tigran",566]));
+
+///////////////////////////////////////////////////////////////
+
+// class Person{
+//     constructor(firstName, lastName, gender, age){
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.gender = gender;
+//         this.age = age;
+
+//     };
+//     get(){
+//         return `all data value ${this.firstName} ${this.lastName} 
+//         ${this.gender} ${this.age}` ;
+//     };
+//     set(){
+//         if(this.age <= 18){
+//             return `you can't apply`;
+//         }else{
+//             return `writ needs data`;
+//         };
+//     }
+//     toString(value){
+//         if (value.split(' ').length === 1 ){
+//             return  value;
+//         }else{
+//             return `onli write your name `
+//         }
+//     }
+
+// }
+// let arr = [];
+// class Student extends Person{
+//     constructor(arr , year, fee){ 
+//        super(arr) 
+//        this.year = year
+//        this.fee = fee;
+//     };
+//     get(){
+//         return `all data value ${this.year} ${this.fee} 
+//         ${arr.join("-")}` ;
+//     };
+//     set(){
+//         if(fee === 0){
+//             return` you don't pay for your year`;
+//         }else{
+//             return `all ok `;
+//         };
+//     };
+//     passExam(program, grade){
+//         let year1 = 0;
+//         if(grade >= 50 ){
+//             year1 + 1 ;
+//            return year1
+//         }
+//         return arr.push(year1);
+//     }
+
+// };
+
+// // const hom = new Person('ww',45)
+// const hom2 = new Student("thiuu")
+// console.log(hom2.passExam("tiko",70));
+// console.log(arr)
+
+////////////////////////////////
+
+function Clock({ template }) {
+    let timer;
+    function render() {
+        let date = new Date();
+        let hours = date.getHours();
+        if (hours < 10) hours = '0' + hours;
+        let mins = date.getMinutes();
+        if (mins < 10) mins = '0' + mins;
+        let secs = date.getSeconds();
+        if (secs < 10) secs = '0' + secs;
+        let output = template
+            .replace('h', hours)
+            .replace('m', mins)
+            .replace('s', secs);
+        console.log(output);
     }
+    this.stop = function () {
+        clearInterval(timer);
+    };
+    this.start = function () {
+        render();
+        timer = setInterval(render, 1000);
+    };
 }
-
-const  count  =  new Account(5467, "tigran", 2500);
-
-console.log(count.transferto(2400));
+let clock = new Clock({ template: 'h:m:s' });
+clock.start();
