@@ -245,7 +245,13 @@
 ////////////////////////////////////////////////////////////
 
 // class Human{
-
+        //    #protectedField = 5;
+        //    static getSomeStaticInfo(){
+        //        console.log("hello", this)
+        //    } 
+// #method(){
+//     console.log()
+// }
 //     constructor(name, surname){
 //         this.name = name;
 //         this.surname = surname;
